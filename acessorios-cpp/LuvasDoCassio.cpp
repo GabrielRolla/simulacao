@@ -13,5 +13,5 @@ string LuvasDoCassio::getDescricaoArma()
 
 int LuvasDoCassio::getResistencia() 
 {
-    return this->resistencia;
+    return this->resistencia * 2;
 }

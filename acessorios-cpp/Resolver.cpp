@@ -9,7 +9,7 @@ Resolver::Resolver(string descricaoArma, int minForca, int maxForca)
 
 int Resolver::gerarForcaAtaque()
 {
-    return maxForca;
+    return (minForca + 1) * 6 - (minForca * 2);
 }
 
 string Resolver::gerarRuidoAtaque()

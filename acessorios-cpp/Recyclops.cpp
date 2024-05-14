@@ -13,5 +13,5 @@ string Recyclops::getDescricaoArma()
 
 int Recyclops::getResistencia() 
 {
-    return this->resistencia;
+    return this->resistencia + 12;
 }

@@ -9,7 +9,7 @@ KorekMachete::KorekMachete(string descricaoArma, int minForca, int maxForca)
 
 int KorekMachete::gerarForcaAtaque()
 {
-    return maxForca;
+    return maxForca - 8;
 }
 
 string KorekMachete::gerarRuidoAtaque()

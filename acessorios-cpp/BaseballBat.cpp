@@ -9,7 +9,7 @@ BaseballBat::BaseballBat(string descricaoArma, int minForca, int maxForca)
 
 int BaseballBat::gerarForcaAtaque()
 {
-    return maxForca;
+    return maxForca - minForca + 8;
 }
 
 string BaseballBat::gerarRuidoAtaque()

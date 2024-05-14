@@ -70,21 +70,22 @@ int Simulador::calcularVidaEquipe(int seletorDeEquipe)
 Personagem* Simulador::proximoPersonagem(vector<Personagem*> equipe)
 {
     int tamanho = equipe.size();
+    int aleatorio =  (std::rand() % tamanho);
+    
     if (tamanho == 0)
     {
         return nullptr;
     }
 
-    int contador = 0;
-    while (contador < tamanho)
+    for (int i = aleatorio; i < tamanho + aleatorio; ++i)
     {
-        if (equipe[contador]->getVida()>0)
+        int proximo = i % tamanho;
+        if (equipe[proximo]->getVida() > 0)
         {
-            return equipe[contador];
+            return equipe[proximo];
         }
-        contador++;
-
     }
+
 
     return nullptr;
 }
@@ -120,11 +121,13 @@ void Simulador::iniciarSimulacao()
      // Define a semente baseada na hora atual
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
     int dano = 0;
-    Personagem* personagemAtacante;
-    Personagem* personagemDefesa;
+
     while(calcularVidaEquipe(1) > 0 && calcularVidaEquipe(2) > 0)
     {
         int equipeQueAtaca =  (std::rand() % 2) == 0 ? 1 : 2;
+
+        Personagem* personagemAtacante;
+        Personagem* personagemDefesa;
 
         if (equipeQueAtaca == 1)
         {
@@ -134,8 +137,8 @@ void Simulador::iniciarSimulacao()
 
         if (equipeQueAtaca == 2)
         {
-            personagemAtacante = proximoPersonagem(equipe2);
-            personagemDefesa = proximoPersonagem(equipe1);
+             personagemAtacante = proximoPersonagem(equipe2);
+             personagemDefesa = proximoPersonagem(equipe1);
         }
 
         dano = criarCombate(personagemAtacante, personagemDefesa);

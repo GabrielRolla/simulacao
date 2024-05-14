@@ -13,5 +13,5 @@ string Suco::getDescricaoArma()
 
 int Suco::getResistencia() 
 {
-    return this->resistencia;
+    return this->resistencia + 5;
 }

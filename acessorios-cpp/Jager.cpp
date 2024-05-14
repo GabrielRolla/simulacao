@@ -13,5 +13,8 @@ string Jager::getDescricaoArma()
 
 int Jager::getResistencia() 
 {
-    return this->resistencia;
+     
+    
+    return this->resistencia * 3 - 10;
+
 }

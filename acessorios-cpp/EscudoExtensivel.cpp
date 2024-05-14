@@ -13,5 +13,5 @@ string EscudoExtensivel::getDescricaoArma()
 
 int EscudoExtensivel::getResistencia() 
 {
-    return this->resistencia;
+    return this->resistencia + 8;
 }

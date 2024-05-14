@@ -9,7 +9,7 @@ Bitcoin::Bitcoin(string descricaoArma, int minForca, int maxForca)
 
 int Bitcoin::gerarForcaAtaque()
 {
-    return maxForca;
+    return (minForca + 2) * 3;
 }
 
 string Bitcoin::gerarRuidoAtaque()
